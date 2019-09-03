@@ -18,7 +18,6 @@ public class CifraDeCesar {
         // TODO code application logic here
         System.out.println("Teste Git");
         System.out.println("Teste local");
-        System.out.println("Teste reverso");
     }
     
 }
