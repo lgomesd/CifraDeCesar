@@ -22,7 +22,7 @@ public class CifraDeCesar {
         String alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         char alfabetoChar[] = alfabeto.toCharArray();
         int nCasos = 0;
-        char sentencaDecod[] = new char[50];
+        
         String sentencaCodString;
         String sentencaCodArray[] = new String[50];
         int nCifra;
@@ -33,35 +33,38 @@ public class CifraDeCesar {
         System.out.println("Entre com o número de casos de teste");
         nCasos = lerCasos.nextInt();
         
-        System.out.println("Entre com a cifra");
-        nCifra = lerCifra.nextInt();
         
         
-        System.out.println("Entre com a mensagem codificada");
-        sentencaCodString = lerStr.nextLine();
-        
-        for(int a=0;a<nCasos;a++)
+        for(int a=1;a<=nCasos;a++){
+            char sentencaDecod[] = new char[50];
+                   
+            System.out.println("Entre com a mensagem codificada");
+            sentencaCodString = lerStr.nextLine();
+            
+            System.out.println("Entre com a cifra");
+            nCifra = lerCifra.nextInt();
+            
             for(int i=0;i<sentencaCodString.length();i++)
                 for(int x=0;x<alfabetoChar.length;x++){
                     if(x-nCifra >= 0){
                         if(alfabetoChar[x] == sentencaCodString.charAt(i)){
-                            System.out.println("Alfabeto: " + alfabetoChar[x]);
-                            System.out.println("Sentenca String: " + sentencaCodString.charAt(i));
+//                            System.out.println("Alfabeto: " + alfabetoChar[x]);
+//                            System.out.println("Sentenca String: " + sentencaCodString.charAt(i));
                             sentencaDecod[i] = alfabetoChar[x-nCifra];
-                            System.out.println("Decode: " + sentencaDecod[i]);
+//                            System.out.println("Decode: " + sentencaDecod[i]);
                             break;
                         }
                     }
                     if(x-nCifra < 0){
                         if(alfabetoChar[x] == sentencaCodString.charAt(i)){
-                            System.out.println("Alfabeto: " + alfabetoChar[x]);
-                            System.out.println("Sentenca String: " + sentencaCodString.charAt(i));
+//                            System.out.println("Alfabeto: " + alfabetoChar[x]);
+//                            System.out.println("Sentenca String: " + sentencaCodString.charAt(i));
                             int b = (x-nCifra)*-1;
                             int y = 26-b;
                             sentencaDecod[i] = alfabetoChar[y];
-                            System.out.println("Decode: " + sentencaDecod[i]);
-                            System.out.println("b: " + b);
-                            System.out.println("y: " + y);
+//                            System.out.println("Decode: " + sentencaDecod[i]);
+//                            System.out.println("b: " + b);
+//                            System.out.println("y: " + y);
                             break;
                         }
                     }
@@ -71,6 +74,7 @@ public class CifraDeCesar {
 
             //for(int i=0;i<sentencaV.length;i++)
              //   System.out.print(sentencaV[i]);
+        }
     }
     
 }
